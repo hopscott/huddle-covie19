@@ -29,20 +29,21 @@ try:
         # Create Excel (.xlsx) file ----------------------------------------
         wb = Workbook()
 
-        for i in range(len(tableNames)):
-            rawTable = tableNames[i]
-            table = str(rawTable)
+        for tupTable in tableNames:
+            table = "".join(tupTable)
+            table = str(table)
             print(table)
             SQL = 'SELECT * from ' + table + ';'
             cursor.execute(SQL)
             results = cursor.fetchall()
-            ws = wb.create_sheet(i)
+            ws = wb.create_sheet(0)
             ws.title = table
             ws.append(cursor.column_names)
             for row in results:
                 ws.append(row)
 
         workbook_name = "test_workbook"
+        wb.remove(wb["Sheet"])
         wb.save(workbook_name + ".xlsx")
 
 except Error as e:
