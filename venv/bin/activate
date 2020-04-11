@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/scottwillis/Desktop/hackathon/PythonScript/huddle-covie19-git/huddle-covie19/venv"
+VIRTUAL_ENV="/Users/scottwillis/Desktop/hackathon/PythonScript/huddle-covie19/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
